@@ -1,14 +1,14 @@
-import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
-import PokemonCard from "./components/PokemonCard";
-import LoadMoreButton from "./components/LoadMoreButton";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import PokemonCard from "../components/PokemonCard";
+import LoadMoreButton from "../components/LoadMoreButton";
 import typeDescriptions from "../utils/typeDescriptions";
-import {motion} from "framer-motion";
-import Search from "./components/Search";
+import { motion } from "framer-motion";
+import Search from "../components/Search";
 
 export default function PokemonTypePage() {
   const router = useRouter();
-  const {type} = router.query; // Get Pokémon type from URL
+  const { type } = router.query; // Get Pokémon type from URL
   const [pokemonList, setPokemonList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(5); // Start with 5 Pokémon
@@ -93,8 +93,7 @@ export default function PokemonTypePage() {
           </div>
           <button
             onClick={() => router.push("/")}
-            className="inline-flex items-center my-4 px-4 py-2 border-white border-2 text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-          >
+            className="inline-flex items-center my-4 px-4 py-2 border-white border-2 text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
             Go Back to Home
           </button>
         </div>
@@ -118,18 +117,16 @@ export default function PokemonTypePage() {
       </div>
       <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{delay: 0.3, duration: 0.6}}
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6"
-        >
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {filteredPokemonList.slice(0, visible).map((pokemon) => (
             <motion.div
               key={pokemon.id}
-              initial={{opacity: 0, y: 20}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.5}}
-            >
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}>
               <PokemonCard pokemon={pokemon} />
             </motion.div>
           ))}

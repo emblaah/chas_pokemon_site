@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from "react";
-import {useFavorites} from "./context/FavoritesContext";
+import React, { useEffect, useState } from "react";
+import { useFavorites } from "../context/FavoritesContext";
 import Link from "next/link";
-import Search from "./components/Search.js";
-import PokemonCard from "./components/PokemonCard";
-import Hero from "./components/Hero";
+import Search from "../components/Search.js";
+import PokemonCard from "../components/PokemonCard";
+import Hero from "../components/Hero";
 
 const BookmarksPage = () => {
   // Använder användarens favoritpokémon från context
-  const {favorites, toggleFavorite} = useFavorites();
+  const { favorites, toggleFavorite } = useFavorites();
   // State för detaljerad information om favoriter
   const [detailedFavorites, setDetailedFavorites] = useState([]);
   // State för den valda sökfrågan
@@ -56,8 +56,7 @@ const BookmarksPage = () => {
       <Hero
         title="Your Favorite Pokémons"
         subtitle="Here are all the Pokémons you've bookmarked. Explore and manage your collection!"
-        image="https://media.tenor.com/7guvvXVPhG0AAAAi/pikachu-pokemon.gif"
-      >
+        image="https://media.tenor.com/7guvvXVPhG0AAAAi/pikachu-pokemon.gif">
         <Search input={input} setInput={handleSearch} width="md:w-[600px]" />
       </Hero>
       <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

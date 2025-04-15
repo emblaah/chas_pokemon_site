@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import FavoriteBtn from "../components/FavoriteBtn";
+import FavoriteBtn from "../../components/FavoriteBtn";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 // Type elements for each type of pokemon and their weaknesses and strengths

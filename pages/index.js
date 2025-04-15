@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { usePokemon } from "./context/PokemonContext";
-import PokemonCard from "./components/PokemonCard";
-import LoadMoreButton from "./components/LoadMoreButton";
-import Hero from "./components/Hero";
-import Search from "./components/Search";
+import { usePokemon } from "../context/PokemonContext";
+import PokemonCard from "../components/PokemonCard";
+import LoadMoreButton from "../components/LoadMoreButton";
+import Hero from "../components/Hero";
+import Search from "../components/Search";
 
 export default function Home() {
   const { searchInput, setSearchInput, pokemons, loading, filteredPokemons } =

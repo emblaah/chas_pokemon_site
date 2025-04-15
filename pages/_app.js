@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
-import { FavoritesProvider } from "./context/FavoritesContext";
-import { PokemonProvider } from "./context/PokemonContext";
+import { FavoritesProvider } from "../context/FavoritesContext";
+import { PokemonProvider } from "../context/PokemonContext";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
